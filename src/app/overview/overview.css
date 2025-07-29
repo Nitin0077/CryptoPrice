@@ -1,0 +1,95 @@
+:host {
+  display: block;
+  padding: 2rem;
+  background-color: #121212;
+  color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.crypto-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  border-top: 4px solid;
+}
+
+.crypto-card {
+  background-color: #1e1e1e;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+}
+
+.crypto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+}
+
+.crypto-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.crypto-header img {
+  width: 48px;
+  height: 48px;
+  margin-right: 1rem;
+  border-radius: 50%;
+  background-color: #2c2c2c;
+}
+
+.crypto-title h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.crypto-title p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #bbbbbb;
+}
+
+.crypto-body p,
+.crypto-supply p,
+.crypto-links p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.crypto-links ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+}
+
+.crypto-links li {
+  margin-bottom: 4px;
+}
+
+.crypto-links a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.crypto-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .crypto-card {
+    padding: 1rem;
+  }
+
+  .crypto-title h3 {
+    font-size: 1rem;
+  }
+
+  .crypto-body p,
+  .crypto-supply p {
+    font-size: 0.85rem;
+  }
+}

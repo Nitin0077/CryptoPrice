@@ -1,0 +1,65 @@
+
+<div class="container">
+<div class="navbar">
+  <div class="logo-box">
+    <h1>Crypto<span>Price</span></h1>
+  </div>
+
+  <nav class="bar">
+    <ul>
+      <li><a routerLink="/dashboard">Dashboard</a></li>
+       <li><a routerLink="/overview">Overview</a></li>
+      <li><a routerLink="/mutual">Ind Mutual Fund</a></li>
+      <li><a routerLink="/exchanges">Trending</a></li>
+      <li><a routerLink="/about">About Project</a></li>
+    </ul>
+  </nav>
+
+  <div class="search-bar">
+    <input type="text" [(ngModel)]="searchText" (ngModelChange)="searchCoin()" placeholder="Search for a coin..." />
+  </div>
+</div>
+<div class="search-card" *ngIf="showPopup">
+  <div class="crypto-card" *ngFor="let coin of cryptoData; let i = index">
+    <div class="crypto-header">
+      <img [src]="coin.png64 || coin.png32" alt="{{ coin.name }}" />
+      <div class="crypto-title">
+        <h3>{{ coin.name }}</h3>
+        <p>{{ coin.code }}</p>
+      </div>
+    </div>
+
+    <div class="crypto-body">
+      <p><strong>Price:</strong> ${{ coin.rate | number: '1.2-2' }}</p>
+      <p><strong>Market Cap:</strong> ${{ coin.cap / 1e9 | number: '1.2-2' }} B</p>
+      <p><strong>Volume:</strong> ${{ coin.volume / 1e9 | number: '1.2-2' }} B</p>
+      <p><strong>All-Time High:</strong> ${{ coin.allTimeHighUSD | number: '1.2-2' }}</p>
+    </div>
+    <!-- Supply Details -->
+<div class="crypto-supply">
+  <p><strong>Total Supply:</strong> {{ coin.totalSupply | number }}</p>
+  <p><strong>Max Supply:</strong> {{ coin.maxSupply | number }}</p>
+</div>
+
+<!-- Links Section -->
+<div class="crypto-links">
+  <p><strong>Links:</strong></p>
+  <ul>
+    <li *ngIf="coin.links?.website">
+      🌐 <a [href]="coin.links.website" target="_blank">Website</a>
+    </li>
+    <li *ngIf="coin.links?.twitter">
+      🐦 <a [href]="coin.links.twitter" target="_blank">Twitter</a>
+    </li>
+    <li *ngIf="coin.links?.telegram">
+      💬 <a [href]="coin.links.telegram" target="_blank">Telegram</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+    </div>
+
+</div>
+</div>

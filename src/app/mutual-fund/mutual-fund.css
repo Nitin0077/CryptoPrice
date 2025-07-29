@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 40px 20px;
+  margin: auto;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0a3d62;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #1e272e;
+  border-left: 4px solid #0a3d62;
+  padding-left: 10px;
+}
+
+.category {
+  font-size: 1.3rem;
+  margin: 20px 0 10px;
+  color: #34495e;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.fund-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+  border: 1px solid #e6e6e6;
+}
+
+.fund-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.fund-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin-bottom: 10px;
+}
+
+.nav {
+  font-size: 0.95rem;
+  color: #636e72;
+  margin-bottom: 8px;
+}
+
+.change {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.change.up {
+  color: #2ecc71;
+}
+
+.change.down {
+  color: #e74c3c;
+}

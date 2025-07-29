@@ -1,0 +1,55 @@
+.stock-card-grid {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.stock-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+  border-left: 6px solid #1976d2;
+}
+
+.stock-card:hover {
+  transform: translateY(-5px);
+}
+
+.stock-card h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.stock-card h3 span {
+  font-weight: normal;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+.price {
+  font-size: 1.25rem;
+  margin: 8px 0;
+}
+
+.up {
+  color: green;
+  margin-left: 6px;
+}
+
+.down {
+  color: red;
+  margin-left: 6px;
+}
+
+.rating {
+  margin-top: 10px;
+  padding: 4px 8px;
+  display: inline-block;
+  background: #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  color: #555;
+}

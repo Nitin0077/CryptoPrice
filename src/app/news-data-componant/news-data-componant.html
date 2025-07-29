@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class="stock-card-grid">
+  <div *ngFor="let stock of stockList" class="stock-card">
+    <h3>{{ stock.company }} <span>({{ stock.ticker }})</span></h3>
+    <p class="price">
+      ₹{{ stock.price }} 
+      <span [ngClass]="stock.net_change >= 0 ? 'up' : 'down'">
+        {{ stock.net_change }} ({{ stock.percent_change }}%)
+      </span>
+    </p>
+    <p>Volume: {{ stock.volume | number }}</p>
+    <p>52W Range: ₹{{ stock['52_week_low'] }} - ₹{{ stock['52_week_high'] }}</p>
+    <p>Trend: {{ stock.short_term_trend }} / {{ stock.long_term_trend }}</p>
+    <div class="rating">{{ stock.overall_rating }}</div>
+  </div>
+</div>

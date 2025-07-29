@@ -1,0 +1,29 @@
+<app-navbar></app-navbar>
+<div class="exchange-table-container">
+  <table class="exchange-table">
+    <thead>
+      <tr>
+        <th>Logo</th>
+        <th>Name</th>
+        <th>Markets</th>
+        <th>Volume</th>
+        <th>Bid Total</th>
+        <th>Ask Total</th>
+        <th>Total Depth</th>
+        <th>Centralized</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ex of exchangesList">
+        <td><img [src]="ex.png64" [alt]="ex.name" width="32" /></td>
+        <td>{{ ex.name }}</td>
+        <td>{{ ex.markets }}</td>
+        <td>{{ ex.volume | number }}</td>
+        <td>{{ ex.bidTotal | number:'1.0-2' }}</td>
+        <td>{{ ex.askTotal | number:'1.0-2' }}</td>
+        <td>{{ ex.depth | number:'1.0-2' }}</td>
+        <td>{{ ex.centralized ? 'Yes' : 'No' }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

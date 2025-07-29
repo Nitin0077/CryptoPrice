@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h1 class="heading">Mutual Fund Dashboard</h1>
+
+  <div *ngIf="mutual?.Debt" class="section">
+    <h2 class="section-title">Debt Funds</h2>
+
+    <div *ngFor="let category of getKeys(mutual.Debt)">
+      <h3 class="category">{{ category }}</h3>
+
+      <div class="card-grid">
+        <div class="fund-card" *ngFor="let fund of mutual.Debt[category]">
+          <h4 class="fund-name">{{ fund.fund_name }}</h4>
+          <div class="nav">NAV: ₹{{ fund.latest_nav | number: '1.2-2' }}</div>
+          <div class="nav">6M: %{{ fund['6_month_return'] | number: '1.2-2' }}</div>
+          <div class="nav">12M: %{{ fund['1_year_return'] | number: '1.2-2' }}</div>
+          <div
+            class="change"
+            [ngClass]="{
+              'up': fund.percentage_change > 0,
+              'down': fund.percentage_change < 0
+            }"
+          >
+            {{ fund.percentage_change ?? 'N/A' }}%
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

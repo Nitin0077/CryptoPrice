@@ -1,0 +1,63 @@
+<app-navbar></app-navbar>
+<div class="coin-dashboard" *ngIf="coinInfo.name">
+  <!-- Header Section -->
+  <div class="coin-top">
+    <div class="coin-main">
+      <img [src]="coinInfo.png64" alt="{{ coinInfo.name }}" />
+      <div>
+        <h1>{{ coinInfo.name }}</h1>
+        <span class="coin-rank">#{{ coinInfo.rank }}</span>
+      </div>
+    </div>
+
+    <div class="coin-price">
+      <h2>${{ coinInfo.rate | number: '1.2-2' }}</h2>
+      <span [ngClass]="coinInfo.delta?.day > 1 ? 'price-up' : 'price-down'">
+  24h:
+  {{ coinInfo.delta?.day > 1 ? '+' : '' }}
+  {{ (coinInfo.delta?.day - 1) | percent: '1.2-2' }}
+</span>
+
+    </div>
+  </div>
+
+  <!-- Statistics -->
+  <div class="coin-grid">
+    <div class="coin-card" *ngIf="coinInfo.cap">
+      <h4>Market Cap</h4>
+      <p>${{ coinInfo.cap | number }}</p>
+    </div>
+    <div class="coin-card" *ngIf="coinInfo.volume">
+      <h4>Volume (24h)</h4>
+      <p>${{ coinInfo.volume | number }}</p>
+    </div>
+    <div class="coin-card" *ngIf="coinInfo.liquidity">
+      <h4>Liquidity</h4>
+      <p>${{ coinInfo.liquidity | number }}</p>
+    </div>
+    <div class="coin-card">
+      <h4>All-Time High</h4>
+      <p>${{ coinInfo.allTimeHighUSD | number: '1.2-2' }}</p>
+    </div>
+    <div class="coin-card">
+      <h4>Circulating Supply</h4>
+      <p>{{ coinInfo.circulatingSupply | number }}</p>
+    </div>
+    <div class="coin-card">
+      <h4>Total Supply</h4>
+      <p>{{ coinInfo.totalSupply | number }}</p>
+    </div>
+  </div>
+
+  <!-- Links -->
+  <div class="coin-links" *ngIf="coinInfo.links">
+    <h3>Official Links</h3>
+    <div class="link-buttons">
+      <ng-container *ngFor="let key of getKeys(coinInfo.links)">
+        <a *ngIf="coinInfo.links[key]" [href]="coinInfo.links[key]" target="_blank">
+          {{ key | titlecase }}
+        </a>
+      </ng-container>
+    </div>
+  </div>
+</div>
