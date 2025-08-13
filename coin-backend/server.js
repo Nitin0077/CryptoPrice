@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 3000;
+
 
 // API Keys
 const LIVECOINWATCH_API_KEY = '317e8d4a-5896-4dca-8827-04bf4b2937af';
@@ -107,6 +107,7 @@ app.get('/api/indian/trending', async (req, res) => {
 /**
  * Start server
  */
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`✅ Server running at http://localhost:${PORT}`);
 });
