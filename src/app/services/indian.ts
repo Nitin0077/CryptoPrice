@@ -11,13 +11,13 @@ constructor(private http:HttpClient){};
 
 
 getIndianIpo(endpoint:string):Observable<any>{
-return this.http.get('http://localhost:3000/api/indian/ipo',{
+return this.http.get('https://cryptoprice-vr5c.onrender.com/api/indian/ipo',{
   params:{endpoint}
 })
 }
 
 
 getIndiaTrending():Observable<any>{
-  return this.http.get('http://localhost:3000/api/indian/trending')
+  return this.http.get('https://cryptoprice-vr5c.onrender.com/api/indian/trending')
 }
 }

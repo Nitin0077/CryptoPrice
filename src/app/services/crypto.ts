@@ -9,6 +9,6 @@ export class CryptoService {
   constructor(private http: HttpClient) {}
 
   getCryptoList(): Observable<any> {
-    return this.http.post<any>('http://localhost:3000/api/crypto',{});
+    return this.http.post<any>('https://cryptoprice-vr5c.onrender.com/api/crypto',{});
   }
 }
