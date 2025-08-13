@@ -10,7 +10,7 @@ app.use(express.json());
 
 // API Keys
 const LIVECOINWATCH_API_KEY = '317e8d4a-5896-4dca-8827-04bf4b2937af';
-const IndianApiKey = 'sk-live-vQBs0CresVtZGTBYTb0zFJA7nzFyk9kLwRZWmHSo';
+const IndianApiKey = 'sk-live-N0KanUcfTKr9pnIsAvck4yMTg59Pb7sDyzqpQhUY';
 
 /**
  * 🚀 Route 1: Get cryptocurrency list

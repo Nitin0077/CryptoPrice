@@ -10,11 +10,11 @@ export class OverviewService {
 
     getOvewView(endpoint:string,payload:any): Observable<any>{
 
-    return this.http.post<any>('http://localhost:3000/api/overview',{endpoint,payload})
+    return this.http.post<any>('https://cryptoprice-vr5c.onrender.com/api/overview',{endpoint,payload})
   }
 
   getOverViewPage(endpoint:string,payload:any):Observable<any>{
-    return this.http.post<any>('http://localhost:3000/api/overview',{endpoint,payload});
+    return this.http.post<any>('https://cryptoprice-vr5c.onrender.com/api/overview',{endpoint,payload});
 
   }
 
